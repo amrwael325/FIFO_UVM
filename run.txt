@@ -1,0 +1,7 @@
+vlib work
+vlog FIFO.sv FIFO_agent.sv FIFO_CFG.sv FIFO_driver.sv FIFO_env.sv FIFO_if.sv FIFO_monitor.sv FIFO_seq_item.sv FIFO_sequence.sv FIFO_scoreboard.sv FIFO_sva.sv  FIFO_test.sv FIFO_top.sv FIFO_coverage.sv FIFO_shared_pkg.sv Sequencer.sv +cover -covercells
+vsim -voptargs=+acc work.FIFO_top -cover
+coverage save FIFO.ucdb -onexit 
+run -all
+quit -sim
+vcover report FIFO.ucdb -details -all -output FIFO_cover.txt 
